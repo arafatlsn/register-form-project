@@ -14,7 +14,7 @@ const Handler = () => {
   const [inputPassword, setInputPassword] = useState("");
 
   // dropdown selection state
-  const [visibleDropdown, setVisibleDropdown] = useState(false)
+  const [visibleDropdown, setVisibleDropdown] = useState(false);
   const [selectedOption, setSelectedOption] = useState("Option One Selected");
 
   // main container
@@ -52,7 +52,9 @@ const Handler = () => {
                     const validateFirstName = (name) => {
                       return String(name).match(/^[a-z ,.'-]+$/);
                     };
-                    const validFirstName = validateFirstName(value.toLowerCase());
+                    const validFirstName = validateFirstName(
+                      value.toLowerCase()
+                    );
                     if (!validFirstName) {
                       setErrorArray([...errorArray, 1]);
                     } else {
@@ -77,7 +79,7 @@ const Handler = () => {
               </div>
 
               {/* last name  */}
-              <div className={styles.firstName}>
+              <div className={styles.lastName}>
                 <label
                   htmlFor="lastName"
                   className={`${
@@ -92,7 +94,7 @@ const Handler = () => {
                     const validateLastName = (name) => {
                       return String(name).match(/^[a-z ,.'-]+$/);
                     };
-                    const validLastName = validateLastName(value.toLowerCase());
+                    const validLastName = validateLastName(value.toLowerCase);
                     if (!validLastName) {
                       setErrorArray([...errorArray, 2]);
                     } else {
@@ -261,7 +263,10 @@ const Handler = () => {
             {/* select option field  */}
             <div className={styles.dropdownContainer}>
               <span>Select the option.</span>
-              <div onClick={() => setVisibleDropdown(true)} className={styles.selectedOption}>
+              <div
+                onClick={() => setVisibleDropdown(true)}
+                className={styles.selectedOption}
+              >
                 <span>{selectedOption}</span>{" "}
                 <span>
                   <IoIosArrowDown />
@@ -269,18 +274,18 @@ const Handler = () => {
               </div>
 
               {/* dropsown hidden div  */}
-              {
-                visibleDropdown && <div className={styles.invisibleContainer}>
-                <div onClick={() => {
-                  setSelectedOption("Option One Selected")
-                  setTimeout(() => setVisibleDropdown(false), 100)
-                  }}>
-                  <span>Option One Selected</span>{" "}
-                  <span>
-                  </span>
+              {visibleDropdown && (
+                <div className={styles.invisibleContainer}>
+                  <div
+                    onClick={() => {
+                      setSelectedOption("Option One Selected");
+                      setTimeout(() => setVisibleDropdown(false), 100);
+                    }}
+                  >
+                    <span>Option One Selected</span> <span></span>
+                  </div>
                 </div>
-                </div>
-              }
+              )}
             </div>
 
             {/* checkbox field  */}
