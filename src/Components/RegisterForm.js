@@ -67,6 +67,13 @@ const Handler = () => {
                   }`}
                   type="text"
                 />
+
+                <div
+                  className={`${
+                    errorArray.indexOf(1) ? styles.border : styles.errorBorder
+                  }`}
+                ></div>
+
                 <span
                   className={`${
                     errorArray.indexOf(1) !== -1
@@ -89,12 +96,13 @@ const Handler = () => {
                   Last Name
                 </label>
                 <input
+                  // validation first name
                   onChange={(e) => {
                     const value = e.target.value;
                     const validateLastName = (name) => {
                       return String(name).match(/^[a-z ,.'-]+$/);
                     };
-                    const validLastName = validateLastName(value.toLowerCase);
+                    const validLastName = validateLastName(value.toLowerCase());
                     if (!validLastName) {
                       setErrorArray([...errorArray, 2]);
                     } else {
@@ -107,9 +115,16 @@ const Handler = () => {
                   }`}
                   type="text"
                 />
+
+                <div
+                  className={`${
+                    errorArray.indexOf(2) ? styles.border : styles.errorBorder
+                  }`}
+                ></div>
+
                 <span
                   className={`${
-                    errorArray.indexOf(2) !== -1
+                    errorArray.indexOf(1) !== -1
                       ? styles.errorMessage
                       : styles.message
                   }`}
@@ -154,6 +169,13 @@ const Handler = () => {
                 }`}
                 type="email"
               />
+
+              <div
+                className={`${
+                  errorArray.indexOf(3) ? styles.border : styles.errorBorder
+                }`}
+              ></div>
+
               <span
                 className={`${
                   errorArray.indexOf(3) !== -1
@@ -212,7 +234,13 @@ const Handler = () => {
                     }`}
                     type={passwordType}
                   />
+                  
                 </div>
+                <div
+                className={`${
+                  errorArray.indexOf(4) ? styles.border : styles.errorBorder
+                }`}
+              ></div>
               </div>
 
               {/* confirm password  */}
@@ -252,6 +280,11 @@ const Handler = () => {
                     type={confirmPasswordType}
                   />
                 </div>
+                <div
+                className={`${
+                  errorArray.indexOf(5) ? styles.border : styles.errorBorder
+                }`}
+              ></div>
               </div>
             </div>
             <span className={styles.passwordErrMssg}>

@@ -4,7 +4,6 @@ import styles from "./Styles/VerifyForm.module.css";
 const Handler = () => {
   const [verifyCode, setVerifyCode] = useState([]);
   const [inputValue, setInputValue] = useState("");
-  console.log(inputValue.length);
 
   return (
     <div className={styles.mainContainer}>

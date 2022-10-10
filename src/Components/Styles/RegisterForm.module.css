@@ -52,7 +52,6 @@
 
 .firstName input {
   border: none;
-  border-bottom: 1px solid #9b9b9b;
 }
 
 .lastName {
@@ -63,7 +62,6 @@
 
 .lastName input {
   border: none;
-  border-bottom: 1px solid #9b9b9b;
 }
 
 /* email section  */
@@ -75,7 +73,6 @@
 
 .emailField input {
   border: none;
-  border-bottom: 1px solid #9b9b9b;
 }
 
 /* password section */
@@ -109,7 +106,6 @@
 .password input {
   width: 100%;
   border: none;
-  border-bottom: 1px solid #9b9b9b;
   padding-right: 2rem;
 }
 
@@ -121,7 +117,6 @@
 
 .confirmPassword input {
   border: none;
-  border-bottom: 1px solid #9b9b9b;
 }
 
 /* select field section  */
@@ -242,6 +237,12 @@ select:focus{
   outline: none;
 }
 
+.border{
+  height: 2px;
+  width: 100%;
+  background-color: #9b9b9b;
+}
+
 /* all error message styles  */
 
 .message {
@@ -260,6 +261,12 @@ select:focus{
 .errorMessage {
   font-size: 14px;
   color: #ff5630;
+}
+
+.errorBorder{
+  height: 2px;
+  width: 100%;
+  background-color: #ff5630;
 }
 
 /* password error message  */
