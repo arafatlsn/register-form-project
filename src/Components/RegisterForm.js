@@ -52,7 +52,7 @@ const Handler = () => {
                     const validateFirstName = (name) => {
                       return String(name).match(/^[a-z ,.'-]+$/);
                     };
-                    const validFirstName = validateFirstName(value);
+                    const validFirstName = validateFirstName(value.toLowerCase());
                     if (!validFirstName) {
                       setErrorArray([...errorArray, 1]);
                     } else {
@@ -92,7 +92,7 @@ const Handler = () => {
                     const validateLastName = (name) => {
                       return String(name).match(/^[a-z ,.'-]+$/);
                     };
-                    const validLastName = validateLastName(value);
+                    const validLastName = validateLastName(value.toLowerCase());
                     if (!validLastName) {
                       setErrorArray([...errorArray, 2]);
                     } else {
