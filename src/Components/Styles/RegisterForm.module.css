@@ -286,6 +286,15 @@ select:focus{
 }
 
 @media screen and (max-width: 480px) {
+  .logoContainer h3 {
+    text-align: center;
+    margin-top: 67px;
+    font-size: 20px;
+    font-weight: 500;
+    white-space: nowrap;
+    font-size: 17px;
+  }
+
   .nameSection {
     display: flex;
     flex-direction: column;
@@ -301,7 +310,7 @@ select:focus{
   .passwordSection {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: 1rem;
   }
 
   .password{
@@ -314,5 +323,20 @@ select:focus{
 
   .confirmPassword{
     width: 100%;
+  }
+
+  .loginNavigateTxt{
+    font-size: 14px;
+    display: block;
+    margin-top: 34px;
+    color: #9b9b9b;
+  }
+
+  .loginNavigateTxt span{
+    color: #1e519f;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: .5rem;
+    cursor: pointer;
   }
 }
