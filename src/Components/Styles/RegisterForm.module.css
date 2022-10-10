@@ -125,22 +125,43 @@
 }
 
 /* select field section  */
-.selectField {
-  width: 100%;
-  margin-top: 48px;
+.dropdownContainer{
+  margin-top: 28px;
+  color: #9b9b9b;
+  position: relative;
 }
 
-.selectField option{
+.selectedOption{
   width: 100%;
-  margin-top: 48px;
-  padding: 3rem 0;
+  border-bottom: 2px solid #9b9b9b;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  color: #2B2B2B;
+  cursor: pointer;
 }
 
-.selectField select {
+.invisibleContainer{
+  position: absolute;
   width: 100%;
-  border: none;
-  border-bottom: 1px solid #9b9b9b;
-  padding: 2rem;
+  z-index: 100;
+}
+
+.invisibleContainer div{
+  width: 100%;
+  padding: 1rem;
+  align-items: center;
+  font-size: 1.1rem;
+  background-color: #F1F1F1;
+  color: #2B2B2B;
+  cursor: pointer;
+}
+
+.invisibleContainer div:hover{
+  background-color: #1e519f;
+  color: white;
 }
 
 /* checkbox field  */
@@ -262,4 +283,36 @@ select:focus{
 
 .passwordErrMssg span:nth-child(4) {
   color: #38cb89;
+}
+
+@media screen and (max-width: 480px) {
+  .nameSection {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+
+  .firstName {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .passwordSection {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+
+  .password{
+    width: 100%;
+  }
+
+  .passwordExtraDiv{
+    width: 100%;
+  }
+
+  .confirmPassword{
+    width: 100%;
+  }
 }

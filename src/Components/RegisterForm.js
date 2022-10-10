@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./Styles/RegisterForm.module.css";
 import { RiEyeCloseLine } from "react-icons/ri";
 import { BsEye } from "react-icons/bs";
+import { IoIosArrowDown } from "react-icons/io";
 
 const Handler = () => {
   // error states
@@ -11,7 +12,10 @@ const Handler = () => {
   const [passwordType, setPasswordType] = useState("password");
   const [confirmPasswordType, setConfirmPasswordType] = useState("password");
   const [inputPassword, setInputPassword] = useState("");
-  console.log(inputPassword);
+
+  // dropdown selection state
+  const [visibleDropdown, setVisibleDropdown] = useState(false)
+  const [selectedOption, setSelectedOption] = useState("Option One Selected");
 
   // main container
   return (
@@ -42,9 +46,14 @@ const Handler = () => {
                   First Name
                 </label>
                 <input
+                  // validation first name
                   onChange={(e) => {
                     const value = e.target.value;
-                    if (value !== "arafat") {
+                    const validateFirstName = (name) => {
+                      return String(name).match(/^[a-z ,.'-]+$/);
+                    };
+                    const validFirstName = validateFirstName(value);
+                    if (!validFirstName) {
                       setErrorArray([...errorArray, 1]);
                     } else {
                       const newArr = errorArray.filter((el) => el !== 1);
@@ -80,7 +89,11 @@ const Handler = () => {
                 <input
                   onChange={(e) => {
                     const value = e.target.value;
-                    if (value !== "hossan") {
+                    const validateLastName = (name) => {
+                      return String(name).match(/^[a-z ,.'-]+$/);
+                    };
+                    const validLastName = validateLastName(value);
+                    if (!validLastName) {
                       setErrorArray([...errorArray, 2]);
                     } else {
                       const newArr = errorArray.filter((el) => el !== 2);
@@ -246,12 +259,29 @@ const Handler = () => {
             </span>
 
             {/* select option field  */}
-            {/* <div className={styles.selectField}>
-            <select name="" id="">
-                <option>select the option</option>
-                <option value={"Option One"}>Option One</option>
-            </select>
-          </div> */}
+            <div className={styles.dropdownContainer}>
+              <span>Select the option.</span>
+              <div onClick={() => setVisibleDropdown(true)} className={styles.selectedOption}>
+                <span>{selectedOption}</span>{" "}
+                <span>
+                  <IoIosArrowDown />
+                </span>
+              </div>
+
+              {/* dropsown hidden div  */}
+              {
+                visibleDropdown && <div className={styles.invisibleContainer}>
+                <div onClick={() => {
+                  setSelectedOption("Option One Selected")
+                  setTimeout(() => setVisibleDropdown(false), 100)
+                  }}>
+                  <span>Option One Selected</span>{" "}
+                  <span>
+                  </span>
+                </div>
+                </div>
+              }
+            </div>
 
             {/* checkbox field  */}
             {/* <label className={styles.formControl}>
@@ -270,8 +300,8 @@ const Handler = () => {
 
         {/* login button section  */}
         <div className={styles.loginSection}>
-              <button>Login</button>
-            </div>
+          <button>Login</button>
+        </div>
       </div>
     </div>
   );
