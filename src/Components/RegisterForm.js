@@ -124,7 +124,7 @@ const Handler = () => {
 
                 <span
                   className={`${
-                    errorArray.indexOf(1) !== -1
+                    errorArray.indexOf(2) !== -1
                       ? styles.errorMessage
                       : styles.message
                   }`}
