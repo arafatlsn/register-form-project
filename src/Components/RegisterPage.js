@@ -4,7 +4,7 @@ import VerifyForm from './VerifyForm'
 const Handler = () => {
   return <div>
     <RegisterForm/>
-    <VerifyForm/>
+    {/* <VerifyForm/> */}
   </div>
 }
 

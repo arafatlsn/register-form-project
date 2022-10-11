@@ -1,17 +1,20 @@
 .mainContainer {
   height: 100vh;
-  background-color: whitesmoke;
   display: flex;
   justify-content: center;
+  background-color: whitesmoke;
 }
 
 .formContainer {
   height: min-content;
-  margin-top: 3rem;
   background-color: white;
-  width: 430px;
-  padding: 51px 60px;
+  width: 428px;
+  padding: 30px 60px;
   border-radius: 1rem;
+}
+
+#confirmPassword{
+  white-space: nowrap;
 }
 
 .logoContainer h1 {
@@ -26,22 +29,30 @@
 .logoContainer h1 span:nth-child(2) {
   color: #ff5630;
 }
-
+.login_style{
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  
+}
 .logoContainer h3 {
   text-align: center;
-  margin-top: 67px;
+  margin-top: 30px;
   font-size: 20px;
   font-weight: bold;
 }
 
 .formSection {
-  margin-top: 51px;
+  margin-top: 31px;
+  width: 100%;
 }
 
 /* all name section  */
 .nameSection {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .firstName {
@@ -52,6 +63,11 @@
 
 .firstName input {
   border: none;
+  border-bottom: 1px solid #9b9b9b;
+}
+
+.errorInputBorder input{
+  border-bottom: 1.5px solid #ff5630;
 }
 
 .lastName {
@@ -62,6 +78,7 @@
 
 .lastName input {
   border: none;
+  border-bottom: 1px solid #9b9b9b;
 }
 
 /* email section  */
@@ -69,59 +86,81 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+
 }
 
 .emailField input {
   border: none;
+  border-bottom: 1px solid #9b9b9b;
+}
+
+.emailFieldErrorBorder input {
+  border: none;
+  border-bottom: 1px solid #ff5630;
 }
 
 /* password section */
-.passwordSection {
+/* .passwordSection {
   display: flex;
   justify-content: space-between;
-}
+  margin-top: 10px;
+  
+} */
 
 .password {
-  display: flex;
-  flex-direction: column;
-  width: 150px;
+  white-space: nowrap;
+  font-size: 15px;
 }
 
 .passwordExtraDiv {
-  width: 150px;
-  overflow: hidden;
   position: relative;
   display: flex;
   align-items: center;
+  color: #000000;
 }
 
 .passwordExtraDiv span {
   font-size: 1.3rem;
   position: absolute;
-  right: 0.5rem;
+  right: 0rem;
   cursor: pointer;
-  color: #9b9b9b;
+  color: #666464;
+  z-index: 10;
+}
+.icon_color{
+  color: #666464;
+  font-size: 16px;
+  z-index: 20;
+}
+.password input {
+  border: none;
+  border-bottom: 1px solid #9b9b9b;
+  padding-right: 20px;
 }
 
-.password input {
-  width: 100%;
-  border: none;
-  padding-right: 2rem;
+.passwordErrorInput input{
+  border-bottom: 1px solid #ff5630;
 }
 
 .confirmPassword {
-  display: flex;
-  flex-direction: column;
-  width: 150px;
+  white-space: nowrap;
+  font-size: 15px;
 }
 
 .confirmPassword input {
   border: none;
+  border-bottom: 1px solid #9b9b9b;
+  padding-right: 20px;
+}
+
+.confirmPasswordErrorInput input{
+  border-bottom: 1px solid #ff5630;
 }
 
 /* select field section  */
 .dropdownContainer{
   margin-top: 28px;
+  margin-bottom: 64px;
   color: #9b9b9b;
   position: relative;
 }
@@ -129,15 +168,14 @@
 .selectedOption{
   width: 100%;
   border-bottom: 2px solid #9b9b9b;
-  padding: 1rem;
+  padding: .5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #2B2B2B;
   cursor: pointer;
 }
-
 .invisibleContainer{
   position: absolute;
   width: 100%;
@@ -146,9 +184,9 @@
 
 .invisibleContainer div{
   width: 100%;
-  padding: 1rem;
+  padding: .5rem;
   align-items: center;
-  font-size: 1.1rem;
+  font-size: 1rem;
   background-color: #F1F1F1;
   color: #2B2B2B;
   cursor: pointer;
@@ -162,8 +200,8 @@
 /* checkbox field  */
 .formControl {
   font-family: system-ui, sans-serif;
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 1.5rem;
+  
   line-height: 1.1;
   display: grid;
   grid-template-columns: 1em auto;
@@ -176,32 +214,38 @@
 
 /* submit section  */
 .submitSection {
-  margin-top: 27px;
+  margin-top: 12px;
 }
 
-.submitSection button {
+.submit_btn {
   width: 100%;
   height: 44px;
   font-size: 1.2rem;
-  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  background-color:  #3f83e9;
+  color: white;
+}
+.register_disabled{
+  width: 100%;
+  height: 44px;
+  font-size: 1.2rem;
   border: none;
   border-radius: 0.5rem;
   background-color: #1e519f;
   color: white;
 }
-
 /* login navigate text  */
 .loginNavigateTxt{
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: right;
   margin-top: 34px;
   color: #9b9b9b;
 }
 
 .loginNavigateTxt span{
   color: #1e519f;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   margin-left: .5rem;
   cursor: pointer;
@@ -212,7 +256,6 @@
   width: 100%;
   height: 44px;
   font-size: 1.2rem;
-  font-weight: 600;
   border-radius: 0.5rem;
   background-color: white;
   color:#1e519f;
@@ -222,11 +265,11 @@
 
 label {
   color: #9b9b9b;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 input {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 input:focus {
@@ -235,12 +278,6 @@ input:focus {
 
 select:focus{
   outline: none;
-}
-
-.border{
-  height: 2px;
-  width: 100%;
-  background-color: #9b9b9b;
 }
 
 /* all error message styles  */
@@ -256,17 +293,12 @@ select:focus{
 
 .errorInput {
   color: #ff5630;
+  border-bottom: 1px solid #ff5630;
+  
 }
-
 .errorMessage {
   font-size: 14px;
   color: #ff5630;
-}
-
-.errorBorder{
-  height: 2px;
-  width: 100%;
-  background-color: #ff5630;
 }
 
 /* password error message  */
