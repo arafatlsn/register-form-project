@@ -3,7 +3,16 @@ import styles from "./Styles/VerifyForm.module.css";
 
 const Handler = () => {
   const [verifyCode, setVerifyCode] = useState([]);
-  const [inputValue, setInputValue] = useState("");
+
+  // const all input code stats
+  const [firstNumber, setFirstNumber] = useState("");
+  const [secondNumber, setSecondNumber] = useState("");
+  const [thirdNumber, setThirdNumber] = useState("");
+  const [fourthNumber, setFourthNumber] = useState("");
+  const [fifthNumber, setFifthNumber] = useState("");
+  const [sixthNumber, setSixthNumber] = useState("");
+
+  console.log(verifyCode);
 
   return (
     <div className={styles.mainContainer}>
@@ -25,80 +34,67 @@ const Handler = () => {
             <div className={styles.verifyCodeContainer}>
               <label htmlFor="verifyCode">
                 <div className={styles.inputFieldContainer}>
-                  <p
-                    className={`${
-                      verifyCode.length - 1 >= 0
-                        ? styles.active
-                        : styles.inputFiled
-                    }`}
-                  >
-                    {verifyCode[0]}
-                  </p>
-                  <p
-                    className={`${
-                      verifyCode.length - 1 >= 1
-                        ? styles.active
-                        : styles.inputFiled
-                    }`}
-                  >
-                    {verifyCode[1]}
-                  </p>
-                  <p
-                    className={`${
-                      verifyCode.length - 1 >= 2
-                        ? styles.active
-                        : styles.inputFiled
-                    }`}
-                  >
-                    {verifyCode[2]}
-                  </p>
-                  <p
-                    className={`${
-                      verifyCode.length - 1 >= 3
-                        ? styles.active
-                        : styles.inputFiled
-                    }`}
-                  >
-                    {verifyCode[3]}
-                  </p>
-                  <p
-                    className={`${
-                      verifyCode.length - 1 >= 4
-                        ? styles.active
-                        : styles.inputFiled
-                    }`}
-                  >
-                    {verifyCode[4]}
-                  </p>
-                  <p
-                    className={`${
-                      verifyCode.length - 1 >= 5
-                        ? styles.active
-                        : styles.inputFiled
-                    }`}
-                  >
-                    {verifyCode[5]}
-                  </p>
+                  <input
+                    type="number"
+                    className={`${styles.inputCode}`}
+                    value={firstNumber}
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      const lastChar = value[value.length - 1];
+                      setFirstNumber(lastChar);
+                    }}
+                  />
+                  <input
+                    type="number"
+                    className={styles.inputCode}
+                    value={secondNumber}
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      const lastChar = value[value.length - 1];
+                      setSecondNumber(lastChar);
+                    }}
+                  />
+                  <input
+                    type="number"
+                    className={styles.inputCode}
+                    value={thirdNumber}
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      const lastChar = value[value.length - 1];
+                      setThirdNumber(lastChar);
+                    }}
+                  />
+                  <input
+                    type="number"
+                    className={styles.inputCode}
+                    value={fourthNumber}
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      const lastChar = value[value.length - 1];
+                      setFourthNumber(lastChar);
+                    }}
+                  />
+                  <input
+                    type="number"
+                    className={styles.inputCode}
+                    value={fifthNumber}
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      const lastChar = value[value.length - 1];
+                      setFifthNumber(lastChar);
+                    }}
+                  />
+                  <input
+                    type="number"
+                    className={styles.inputCode}
+                    value={sixthNumber}
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      const lastChar = value[value.length - 1];
+                      setSixthNumber(lastChar);
+                    }}
+                  />
                 </div>
-                <input
-                  onChange={(e) => {
-                    const value = e.target.value;
-                    const lastChar = value[value.length - 1];
-                    if (value.length <= 6) {
-                      setInputValue(value);
-                      setVerifyCode([...verifyCode, lastChar]);
-                    }
-
-                    if (value.length !== verifyCode.length + 1) {
-                      setVerifyCode([]);
-                      setInputValue("");
-                    }
-                  }}
-                  type="number"
-                  name="verifyCode"
-                  id="verifyCode"
-                  value={inputValue}
-                />
               </label>
             </div>
 
